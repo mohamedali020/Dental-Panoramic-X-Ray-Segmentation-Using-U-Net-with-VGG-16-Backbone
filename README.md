@@ -1,4 +1,4 @@
-# Dental X-ray Binary Segmentation with U-Net and VGG16 🦷
+# Dental X-ray Images Analysis Using Deep Learning(Segmentation Task..)🦷
 
 ## Project Description
 This project implements a deep learning-based solution for binary semantic segmentation of Dental Panoramic X-ray images, aiming to assist dentists in diagnosing dental conditions such as caries, impacted teeth, and missing teeth. The AI-powered vision system processes 256x256 RGB X-ray images, generating pixel-wise binary masks (1 for Target dental structures, 0 for Background) to enhance diagnostic accuracy, reduce errors, and optimize treatment planning. Built as my first hands-on experience with image segmentation, this work leverages the U-Net architecture with a pre-trained VGG16 backbone, trained on a Kaggle dataset.
