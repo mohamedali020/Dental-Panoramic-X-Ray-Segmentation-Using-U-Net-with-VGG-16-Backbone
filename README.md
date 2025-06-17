@@ -61,6 +61,9 @@ such as:
 ![Screenshot Example](https://github.com/mohamedali020/Dental-Panoramic-X-Ray-Segmentation-Using-U-Net-with-VGG-16-Backbone/raw/main/Screenshot_15.png)
 ![Screenshot Example 1](https://github.com/mohamedali020/Dental-Panoramic-X-Ray-Segmentation-Using-U-Net-with-VGG-16-Backbone/raw/main/Screenshot_1.png)
 
+## Final Output:
+![WhatsApp Image Example](https://github.com/mohamedali020/Dental-Panoramic-X-Ray-Segmentation-Using-U-Net-with-VGG-16-Backbone/raw/main/WhatsApp%20Image%202025-06-17%20at%2017.56.19_65fbd25a.jpg)
+
 ## Future Work and Developments
 The future work that could be developed in the field of image segmentation includes **reducing the computational time and power.**  Smart Imaging is ongoing research in the fields of image segmentation, it is known that segmentation algorithms are **able to perform well on images with high quality after applying pre-processing on the images**, unfortunately, it is proven that **those algorithms fail on lowquality images**. **Smart imaging is the process of automatically improving the quality of the input images**, which would be **very effective to increase the accuracy of segmenting medical** images. It is stated that it uses a deep learning approach **to effectively improve the image quality and denoise it automatically**, the process is also being tested on **improving image resolution**, motion correction, shadow detection, and denoising, and **Data Expansion and Multi-class Integration with Mask R-CNN**
 
