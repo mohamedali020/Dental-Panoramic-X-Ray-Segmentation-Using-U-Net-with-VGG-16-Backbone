@@ -67,3 +67,126 @@ such as:
 The future work that could be developed in the field of image segmentation includes **reducing the computational time and power.**  Smart Imaging is ongoing research in the fields of image segmentation, it is known that segmentation algorithms are **able to perform well on images with high quality after applying pre-processing on the images**, unfortunately, it is proven that **those algorithms fail on lowquality images**. **Smart imaging is the process of automatically improving the quality of the input images**, which would be **very effective to increase the accuracy of segmenting medical** images. It is stated that it uses a deep learning approach **to effectively improve the image quality and denoise it automatically**, the process is also being tested on **improving image resolution**, motion correction, shadow detection, and denoising, and **Data Expansion and Multi-class Integration with Mask R-CNN**
 
 
+# Dental X-ray Images Analysis Using Deep Learning (Segmentation Task) 🦷
+
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![GitHub stars](https://img.shields.io/github/stars/USERNAME/REPO.svg)](https://github.com/USERNAME/REPO/stargazers) [![Kaggle Dataset](https://img.shields.io/badge/Kaggle-Dataset-20BEFF?logo=kaggle&logoColor=fff)](https://www.kaggle.com/datasets/mohamedali020/dental-x-raypanoramic-semanticsegmentation-task)
+
+## 📑 Table of Contents
+- [Abstract](#abstract)  
+- [Challenges](#challenges)  
+- [Project Overview](#project-overview)  
+- [Dataset Details](#dataset-details)  
+- [Methodology](#methodology)  
+- [Model Architecture](#model-architecture)  
+- [Results](#results)  
+- [Final Output](#final-output)  
+- [Future Work](#future-work)  
+- [Installation & Usage](#installation--usage)  
+
+---
+
+## 🧾 Abstract
+
+Radiographic examinations assist dentists in early diagnosis of complications like infections, bone defects, or tumors. Unfortunately, **3% of X-ray diagnoses are false**, causing patient distress. Deep learning segmentation of dental X-rays can improve accuracy and speed.
+
+Segmentation divides each pixel into **target** (teeth with issues) or **background**, simplifying image representation. This project tackles **binary segmentation**—classifying each pixel as 1 (target) or 0 (background)—using **U-Net with VGG‑16 backbone**.
+
+---
+
+## ⚠️ Challenges
+
+- X-rays often have **noise**, requiring denoising, resizing, normalization, and scaling.
+- **High variability** in tooth shape, size, and alignment across patients can lead to false positives.
+- **Preprocessing** demands heavy computation and can cause runtime issues depending on available hardware.
+- **Class imbalance**: background pixels heavily outnumber target pixels, requiring careful training strategy.
+
+---
+
+## 📋 Project Overview
+
+- I built an **AI-powered system** that helps dentists analyze panoramic X-rays.
+- They upload an X-ray → the model segments problem areas (e.g. caries, impacted or missing teeth).
+- A **U-Net-based binary segmentation** identifies dental regions (target vs. background).
+- I trained a **U-Net with VGG-16 encoder**, optimized to classify each pixel correctly.
+
+---
+
+## 📊 Dataset Details
+
+- **Source:** Kaggle ([link](https://www.kaggle.com/datasets/mohamedali020/dental-x-raypanoramic-semanticsegmentation-task)), originally from Roboflow.
+- **Counts & Splits:**
+  - Train: 4,772 images + masks  
+  - Validation: 2,071 images + masks  
+  - Test: 1,345 images + masks  
+- **Resolution:** Mostly 640×640 px  
+- **Classes:** {1,2,3,…,14} annotation IDs in masks  
+- **Samples:**  
+  ![Dataset Input Sample](https://github.com/mohamedali020/Dental-Panoramic-X-Ray-Segmentation-Using-U-Net-with-VGG-16-Backbone/raw/main/0d220dea-Farasati_Simin_35yo_08062021_145847_jpg.rf.478a679c3667801fa26068e518dea362.jpg)  
+  ![Dataset Mask Sample](https://github.com/mohamedali020/Dental-Panoramic-X-Ray-Segmentation-Using-U-Net-with-VGG-16-Backbone/raw/main/00cf39c1-Karaptiyan_Robert_50yo_13032021_185908_jpg.rf.98b2e72cb9a26e75d40df97e04473ada.jpg_mask.png)
+
+---
+
+## ⚙️ Methodology
+
+1. **Data Collection** → Gather and inspect the dataset.  
+2. **Pre‑processing** → Resize, normalize, and ensure consistent formatting.  
+3. **Data Augmentation** (via Albumentations):
+   - Horizontal flip (70%)  
+   - Rotation ≤ 5° (70%)  
+   - Random brightness/contrast (limit 0.1, 30%)  
+   - Shift/Scale/Rotate (10°, 50%)  
+4. **Segmentation Model** → Build U-Net with VGG‑16 backbone.  
+5. **Hyper‑tuning & Metrics** → Use BCE + Dice loss; track accuracy & Dice coefficient.
+
+---
+
+## 🧱 Model Architecture
+
+- **U‑Net**: Encoder–decoder with skip connections, ideal for medical imaging.  
+- **Encoder:** VGG‑16 (ImageNet pretrained) for robust feature extraction.  
+- **Decoder:** Upsampling layers with skip‑connections to restore spatial details.  
+- **Output:** Sigmoid + 1×1 conv → pixelwise probability map.
+
+---
+
+## 📈 Results
+
+After 8 epochs:
+
+| Metric            | Training | Validation |
+|------------------|----------|------------|
+| Accuracy         | 0.9859   | 0.9878     |
+| Dice Coefficient | 0.71     | 0.7123     |
+
+![Training Curves](https://github.com/mohamedali020/Dental-Panoramic-X-Ray-Segmentation-Using-U-Net-with-VGG-16-Backbone/raw/main/Screenshot_15.png)
+
+---
+
+## 🎯 Final Output
+
+A binary mask highlighting target tooth regions.
+
+![Final Output Example](https://github.com/mohamedali020/Dental-Panoramic-X-Ray-Segmentation-Using-U-Net-with-VGG-16-Backbone/raw/main/WhatsApp%20Image%20Example.jpg)
+
+---
+
+## 🔭 Future Work & Developments
+
+- **Speed Optimizations:** Reduce computational cost via model trimming or quantization.  
+- **Smart Imaging:** Automatically enhance low-quality X-rays (denoising, resolution upscaling).  
+- **Multi-class Segmentation:** Use Mask R‑CNN or multiclass U-Net for identifying tooth types.  
+- **Motion/Shadow Correction:** Handle real-world X-ray artifacts.  
+- **Clinical Integration:** Incorporate dentist feedback into model refinement.
+
+---
+
+## 🛠️ Installation & Usage
+
+```bash
+# Clone repository
+git clone https://github.com/USERNAME/REPO.git
+cd REPO
+
+# Install dependencies (Python 3.7+)
+pip install -r requirements.txt
+
