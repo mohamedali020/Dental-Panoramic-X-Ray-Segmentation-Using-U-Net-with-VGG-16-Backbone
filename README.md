@@ -1,27 +1,33 @@
 # Dental X-ray Images Analysis Using Deep Learning(Segmentation Task..)🦷
 
-## Project Description
-This project implements a deep learning-based solution for binary semantic segmentation of Dental Panoramic X-ray images, aiming to assist dentists in diagnosing dental conditions such as caries, impacted teeth, and missing teeth. The AI-powered vision system processes 256x256 RGB X-ray images, generating pixel-wise binary masks (1 for Target dental structures, 0 for Background) to enhance diagnostic accuracy, reduce errors, and optimize treatment planning. Built as my first hands-on experience with image segmentation, this work leverages the U-Net architecture with a pre-trained VGG16 backbone, trained on a Kaggle dataset.
+##Abstract:
+radiographic examinations have a major role in assisting dentists to analyse the early teeth complications diagnosis such as infections, bone defects, and tumors. Unfortunately, relying only on the dentist’s opinion after 
+a radiographic scan may lead to false-positive results, where it is proven that **3% of X-ray scan diagnoses are false resulting in psychological stress for the patients.** Researchers and doctors began using computer vision techniques to aid in diagnosing patients in the dentistry field because of the growing number of medical X-Ray images. In computer vision, various tasks are applied to digital images such as object detection, object tracking, and features recognition. **The most important computer vision technique is image segmentation, which is a deep learning technology used in the medical sector to detect key features in medical radiographs. Image segmentation works by dividing the pixels of an image into numerous segments, where each pixel is usually classified to belong to a specific class category in the image, this helps simplify the representation of the input image making the desired objects** 
+easier to analyze by extracting the boundaries between objects to develop significant regions. There are numerous image segmentation algorithms with the goal to detect and extract the 
+desired object from the image background. The two main types of image segmentation are semantic segmentation and instance segmentation where both techniques concatenate one another. **Semantic segmentation associates each pixel of the digital image with a class label** such as teeth in general, however, instance segmentation handles numerous objects of the same class independently.
 
-## Dataset Details
-- **Source:** Kaggle Dataset (ID: 7644979).
-- **Size:** 4772 training images and 2071 validation images.
-- **Format:** 256x256x3 RGB images with corresponding binary masks.
-- **Challenge:** Significant class imbalance (~3.79% Target pixels), addressed using data augmentation (e.g., HorizontalFlip, Rotate, GaussNoise) to improve the Target-to-Background ratio (1:38 post-augmentation).
+##Challenges:
+Image segmentation is **a difficult task for computers to execute**, the reason why it is not an easy challenge is due to the datasets used for segmentation tasks. Raw X-Ray images are usually corrupted with noise which may cause significant difficulties, to overcome some issues in the input images we **require numerous pre-processing techniques such as denoising** the images, 
+scaling and normalizing the images, resizing all images, and adjusting images. Such **preprocessing techniques require high computational power and time** to load and process the data which may lead to runtime errors depending on the dataset used and the hardware handling the computation. Another challenge that is faced during image segmentation applications is the variability of the objects in the images, an example is the **dataset, teeth shapes vary between 
+humans in terms of tooth location, tooth size, some images will include more teeth than others**, and teeth adhesion. This variability between input images makes it harder for the neural networks to learn and might **result in a large false-positive rate if not tackled correctly.**
+
+## Project Overview📋
+This is my first hands-on with image segmentation..In this project, **my goal is to develop an application with an AI-powered vision system that helps dentists diagnose panoramic dental X-rays. When a patient submits a panoramic dental X-ray, the dentist uploads it to the AI ​​system, which analyzes it to arrive at a final diagnosis. This improves diagnostic accuracy and speed, reduces errors, and leads to a better, more accurate treatment plan.** I will work on **a Segmentation Task**, which is very important, especially for medical images. I will also train the **U-net architecture Model and VGG-16-Backbone**..I will work on the **binary segmentation task**, which is its **role** in this project.Dividing the image into **two parts only:** A **mask is produced** from it containing the **Target**, which is the teeth with problems such as caries, impacted teeth, missing teeth, etc., depending on the **classes and annotations**, and the Background. **Each pixel in the image is classified as either 1 (Target) or 0 (Background).**
+
 
 ## Methodology
-### Image Segmentation
-Image segmentation groups pixels with similar attributes into meaningful regions. In this binary segmentation task, each pixel is labeled as either Target (dental structures of interest) or Background, enabling detailed pixel-level analysis critical for medical diagnostics.
+**Methodology**
+the methodology used in building the segmentation models will be discussed 
+such as: 
+1- Data Collection 
+2- Data pre-processing 
+3- Deep Learning segmentation model architectures.  
+4- Hyper-tuning and evaluation metrics.
 
 ### Model Architecture
 - **U-Net:** A widely adopted architecture for semantic segmentation, initially designed for medical images. It excels in tasks like brain tumor, lung, and cell segmentation, and is adapted here for dental X-rays.
 - **Backbone:** VGG16 provides pre-trained feature extraction, enhancing model performance.
-- **Training Setup:** TensorFlow/Keras with a batch size of 4, 12 epochs (targeting 50), and callbacks (ModelCheckpoint, EarlyStopping, ReduceLROnPlateau). Custom Dice Loss and Dice Coefficient are used as loss function and metric, respectively.
 
-### Implementation Steps
-1. **Data Preprocessing:** Resize images to 256x256, normalize pixel values, and apply augmentation.
-2. **Model Training:** Optimize using GPU acceleration on Kaggle.
-3. **Visualization:** Generate overlaid masks, standalone masks, and Grad-CAM heatmaps to interpret model focus.
 
 ## Results
 - **Performance:** After 12 epochs, the model achieves a Dice Coefficient of 0.6068 (training) and 0.6148 (validation), with losses reducing to 0.9659 and 0.9993, respectively.
