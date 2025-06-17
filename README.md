@@ -56,14 +56,10 @@ such as:
 
 
 ## Results
-- **Performance:** After 12 epochs, the model achieves a Dice Coefficient of 0.6068 (training) and 0.6148 (validation), with losses reducing to 0.9659 and 0.9993, respectively.
-- **Classification Metrics:** 99% accuracy, 74% precision, 66% recall, and 70% F1-score for the Target class (support: 2,082,218 pixels), indicating robust background segmentation but room for Target improvement.
-- **Visual Outputs:** Masks and heatmaps provide qualitative insights into segmentation accuracy.
+- **Performance:** After 8 epochs, the model achieves a  accuracy: 0.9859 (training) and 0.9878 (validation) and Dice Coefficient of 0.71 (training), 0.7123 (validation)
 
 
 ## Future Work and Developments
-- **Computational Efficiency:** Reduce training time and resource demands for scalability.
-- **Smart Imaging:** Employ deep learning to automatically enhance low-quality images through denoising, resolution improvement, motion correction, and shadow detection, boosting segmentation accuracy for medical images.
-- **Advanced Segmentation:** Expand the dataset and transition to multi-class segmentation using Mask R-CNN to classify diverse dental structures (e.g., caries, bone loss).
+The future work that could be developed in the field of image segmentation includes **reducing the computational time and power.**  Smart Imaging is ongoing research in the fields of image segmentation, it is known that segmentation algorithms are **able to perform well on images with high quality after applying pre-processing on the images**, unfortunately, it is proven that **those algorithms fail on lowquality images**. **Smart imaging is the process of automatically improving the quality of the input images**, which would be **very effective to increase the accuracy of segmenting medical** images. It is stated that it uses a deep learning approach **to effectively improve the image quality and denoise it automatically**, the process is also being tested on **improving image resolution**, motion correction, shadow detection, and denoising, and **Data Expansion and Multi-class Integration with Mask R-CNN**
 
 
