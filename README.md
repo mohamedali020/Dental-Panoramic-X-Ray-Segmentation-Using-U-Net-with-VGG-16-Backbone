@@ -55,6 +55,7 @@ such as:
 - **Backbone:** VGG16 provides pre-trained feature extraction, enhancing model performance.
 
 
+
 ## Results
 - **Performance:** After 8 epochs, the model achieves a  accuracy: 0.9859 (training) and 0.9878 (validation) and Dice Coefficient of 0.71 (training), 0.7123 (validation)
 
