@@ -59,7 +59,6 @@ such as:
 ## Results
 - **Performance:** After 8 epochs, the model achieves a  accuracy: 0.9859 (training) and 0.9878 (validation) and Dice Coefficient of 0.71 (training), 0.7123 (validation)
 ![Screenshot Example](https://github.com/mohamedali020/Dental-Panoramic-X-Ray-Segmentation-Using-U-Net-with-VGG-16-Backbone/raw/main/Screenshot_15.png)
-![Screenshot Example 1](https://github.com/mohamedali020/Dental-Panoramic-X-Ray-Segmentation-Using-U-Net-with-VGG-16-Backbone/raw/main/Screenshot_1.png)
 
 ## Final Output:
 ![WhatsApp Image Example](https://github.com/mohamedali020/Dental-Panoramic-X-Ray-Segmentation-Using-U-Net-with-VGG-16-Backbone/raw/main/WhatsApp%20Image%202025-06-17%20at%2017.56.19_65fbd25a.jpg)
