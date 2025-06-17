@@ -37,8 +37,8 @@ To enhance the model's robustness and generalization, a significant portion of t
   - **Test Mask Labels:** 1345
 - **Image Size:** Primarily (640, 640) pixels (Width, Height), with 10 images confirmed at this resolution; all other images are uniformly sized.
 - **Unique Classes in Annotations:** {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14}
-![Sample Dataset Images](https://github.com/mohamedali020/Dental-Panoramic-X-Ray-Segmentation-Using-U-Net-with-VGG-16-Backbone/raw/main/0d220dea-Farasati_Simin_35yo_08062021_145847_jpg.rf.478a679c3667801fa26068e518dea362.jpg)
-
+![Sample images from dataset showing image segmentation output](https://github.com/mohamedali020/Dental-Panoramic-X-Ray-Segmentation-Using-U-Net-with-VGG-16-Backbone/raw/main/0d220dea-Farasati_Simin_35yo_08062021_145847_jpg.rf.478a679c3667801fa26068e518dea362.jpg)
+![Sample images from dataset showing Mask segmentation output](https://github.com/mohamedali020/Dental-Panoramic-X-Ray-Segmentation-Using-U-Net-with-VGG-16-Backbone/raw/main/00cf39c1-Karaptiyan_Robert_50yo_13032021_185908_jpg.rf.98b2e72cb9a26e75d40df97e04473ada.jpg_mask.png)
 
 ## Methodology
 
