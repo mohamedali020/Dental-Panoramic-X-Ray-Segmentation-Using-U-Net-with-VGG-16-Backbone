@@ -17,8 +17,26 @@ humans in terms of tooth location, tooth size, some images will include more tee
 
 This is my first hands-on with image segmentation..In this project, **my goal is to develop an application with an AI-powered vision system that helps dentists diagnose panoramic dental X-rays. When a patient submits a panoramic dental X-ray, the dentist uploads it to the AI ​​system, which analyzes it to arrive at a final diagnosis. This improves diagnostic accuracy and speed, reduces errors, and leads to a better, more accurate treatment plan.** I will work on **a Segmentation Task**, which is very important, especially for medical images. I will also train the **U-net architecture Model and VGG-16-Backbone**..I will work on the **binary segmentation task**, which is its **role** in this project.Dividing the image into **two parts only:** A **mask is produced** from it containing the **Target**, which is the teeth with problems such as caries, impacted teeth, missing teeth, etc., depending on the **classes and annotations**, and the Background. **Each pixel in the image is classified as either 1 (Target) or 0 (Background).**
 
-##Sample Dataset Images:
+### Data Augmentation
+To enhance the model's robustness and generalization, a significant portion of the 4772 training images was utilized. Data augmentation techniques were employed to increase dataset diversity, addressing the class imbalance. The following transformations were applied using the `Albumentations` library:
 
++Horizontal Flip: Flipping the images horizontally with 70% probability to simulate lateral perspectives.
++Rotate (limit=5): Rotating the images clockwise by up to 5 degrees with 70% probability to account for slight orientation variations.
++RandomBrightnessContrast: Adjusting brightness and contrast with limits of 0.1 and 30% probability to handle lighting variations.
++ShiftScaleRotate: Shifting, scaling, and rotating with limits of 0.1, 10 degrees, and 50% probability to simulate positional and scaling differences.
+
+## Dataset Details
+- **Source:** Available on Kaggle (https://www.kaggle.com/datasets/mohamedali020/dental-x-raypanoramic-semanticsegmentation-task) and originally sourced from Roboflow (https://universe.roboflow.com/arshs-workspace-radio/vzrad2).
+- **Description:** This dataset fuels AI innovation in tooth segmentation for improved dental care. It includes panoramic X-ray images divided into binary and multi-class segmentation tasks, with three annotation files for training, validation, and testing.
+- **Composition:**
+  - **Train Images:** 4772
+  - **Train Mask Labels:** 4772
+  - **Validation Images:** 2071
+  - **Validation Mask Labels:** 2071
+  - **Test Images:** 1345
+  - **Test Mask Labels:** 1345
+- **Image Size:** Primarily (640, 640) pixels (Width, Height), with 10 images confirmed at this resolution; all other images are uniformly sized.
+- **Unique Classes in Annotations:** {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14}
 ![Sample Dataset Images](https://github.com/mohamedali020/Dental-Panoramic-X-Ray-Segmentation-Using-U-Net-with-VGG-16-Backbone/raw/main/0d220dea-Farasati_Simin_35yo_08062021_145847_jpg.rf.478a679c3667801fa26068e518dea362.jpg)
 
 
