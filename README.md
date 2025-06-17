@@ -17,6 +17,10 @@ humans in terms of tooth location, tooth size, some images will include more tee
 
 This is my first hands-on with image segmentation..In this project, **my goal is to develop an application with an AI-powered vision system that helps dentists diagnose panoramic dental X-rays. When a patient submits a panoramic dental X-ray, the dentist uploads it to the AI ​​system, which analyzes it to arrive at a final diagnosis. This improves diagnostic accuracy and speed, reduces errors, and leads to a better, more accurate treatment plan.** I will work on **a Segmentation Task**, which is very important, especially for medical images. I will also train the **U-net architecture Model and VGG-16-Backbone**..I will work on the **binary segmentation task**, which is its **role** in this project.Dividing the image into **two parts only:** A **mask is produced** from it containing the **Target**, which is the teeth with problems such as caries, impacted teeth, missing teeth, etc., depending on the **classes and annotations**, and the Background. **Each pixel in the image is classified as either 1 (Target) or 0 (Background).**
 
+##Sample Dataset Images:
+
+https://github.com/mohamedali020/Dental-Panoramic-X-Ray-Segmentation-Using-U-Net-with-VGG-16-Backbone/blob/main/0d220dea-Farasati_Simin_35yo_08062021_145847_jpg.rf.478a679c3667801fa26068e518dea362.jpg
+
 
 ## Methodology
 
