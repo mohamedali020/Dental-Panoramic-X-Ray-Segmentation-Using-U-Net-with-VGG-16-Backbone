@@ -181,19 +181,6 @@ A binary mask highlighting target tooth regions.
 
 ---
 
-## 🛠️ Installation & Usage
-
-```bash
-# Clone repository
-git clone https://github.com/USERNAME/REPO.git
-cd REPO
-
-# Install dependencies (Python 3.7+)
-pip install -r requirements.txt
-
-
-
-
 Dental X-ray Panoramic Image Segmentation Using Deep Learning
 📑 Table of Contents
 Abstract
@@ -271,3 +258,18 @@ arxiv.org
 data.mendeley.com
 pubmed.ncbi.nlm.nih.gov
 . Relevant code libraries and the Kaggle/Roboflow dataset links are provided above.
+
+
+## 🛠️ Installation & Usage
+
+```bash
+# Clone repository
+git clone https://github.com/USERNAME/REPO.git
+cd REPO
+
+# Install dependencies (Python 3.7+)
+pip install -r requirements.txt
+
+
+
+
