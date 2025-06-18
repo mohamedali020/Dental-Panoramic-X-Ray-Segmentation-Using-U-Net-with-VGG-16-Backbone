@@ -110,7 +110,7 @@ Segmentation divides each pixel into **target** (teeth with issues) or **backgro
 - I trained a **U-Net with VGG-16 encoder**, optimized to classify each pixel correctly.
 
 ---
-
+ 
 ## 📊 Dataset Details
 
 - **Source:** Kaggle ([link](https://www.kaggle.com/datasets/mohamedali020/dental-x-raypanoramic-semanticsegmentation-task)), originally from Roboflow.
