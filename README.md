@@ -2,7 +2,7 @@
 
 ##Abstract:
 
-radiographic examinations have a major role in assisting dentists to analyse the early teeth complications diagnosis such as infections, bone defects, and tumors. Unfortunately, relying only on the dentist’s opinion after 
+Radiographic examinations have a major role in assisting dentists to analyse the early teeth complications diagnosis such as infections, bone defects, and tumors. Unfortunately, relying only on the dentist’s opinion after 
 a radiographic scan may lead to false-positive results, where it is proven that **3% of X-ray scan diagnoses are false resulting in psychological stress for the patients.** Researchers and doctors began using computer vision techniques to aid in diagnosing patients in the dentistry field because of the growing number of medical X-Ray images. In computer vision, various tasks are applied to digital images such as object detection, object tracking, and features recognition. **The most important computer vision technique is image segmentation, which is a deep learning technology used in the medical sector to detect key features in medical radiographs. Image segmentation works by dividing the pixels of an image into numerous segments, where each pixel is usually classified to belong to a specific class category in the image, this helps simplify the representation of the input image making the desired objects** 
 easier to analyze by extracting the boundaries between objects to develop significant regions. There are numerous image segmentation algorithms with the goal to detect and extract the 
 desired object from the image background. The two main types of image segmentation are semantic segmentation and instance segmentation where both techniques concatenate one another. **Semantic segmentation associates each pixel of the digital image with a class label** such as teeth in general, however, instance segmentation handles numerous objects of the same class independently.
@@ -87,9 +87,10 @@ The future work that could be developed in the field of image segmentation inclu
 
 ## 🧾 Abstract
 
-Radiographic examinations assist dentists in early diagnosis of complications like infections, bone defects, or tumors. Unfortunately, **3% of X-ray diagnoses are false**, causing patient distress. Deep learning segmentation of dental X-rays can improve accuracy and speed.
-
-Segmentation divides each pixel into **target** (teeth with issues) or **background**, simplifying image representation. This project tackles **binary segmentation**—classifying each pixel as 1 (target) or 0 (background)—using **U-Net with VGG‑16 backbone**.
+**Radiographic examinations** have a major role in assisting **dentists to analyse the early teeth complications diagnosis** such as infections, bone defects, and tumors. Unfortunately, relying only on the dentist’s opinion after 
+a radiographic scan may lead to false-positive results, where it is proven that **3% of X-ray scan diagnoses are false resulting in psychological stress for the patients.** Researchers and doctors began using computer vision techniques to aid in diagnosing patients in the dentistry field because of the growing number of medical X-Ray images. In computer vision, various tasks are applied to digital images such as object detection, object tracking, and features recognition. **The most important computer vision technique is image segmentation, which is a **deep learning technology used in the medical sector to detect key features in medical radiographs**. Image segmentation works by dividing the **pixels of an image into numerous segments**, where each pixel is usually classified to belong to a specific class category in the image, this helps simplify the representation of the input image making the desired objects** 
+easier to analyze by extracting the boundaries between objects to develop significant regions. There are numerous image segmentation algorithms with the goal to detect and extract the 
+desired object from the image background. The **two main types of image segmentation are semantic segmentation and instance segmentation** where both techniques concatenate one another. **Semantic segmentation associates each pixel of the digital image with a class label** such as teeth in general, however, instance segmentation handles numerous objects of the same class independently.
 
 ---
 
