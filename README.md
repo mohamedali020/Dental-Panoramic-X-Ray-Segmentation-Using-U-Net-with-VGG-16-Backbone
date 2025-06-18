@@ -67,11 +67,19 @@ such as:
 The future work that could be developed in the field of image segmentation includes **reducing the computational time and power.**  Smart Imaging is ongoing research in the fields of image segmentation, it is known that segmentation algorithms are **able to perform well on images with high quality after applying pre-processing on the images**, unfortunately, it is proven that **those algorithms fail on lowquality images**. **Smart imaging is the process of automatically improving the quality of the input images**, which would be **very effective to increase the accuracy of segmenting medical** images. It is stated that it uses a deep learning approach **to effectively improve the image quality and denoise it automatically**, the process is also being tested on **improving image resolution**, motion correction, shadow detection, and denoising, and **Data Expansion and Multi-class Integration with Mask R-CNN**
 
 
+
+
+
+
 # Dental X-ray Images Analysis Using Deep Learning (Segmentation Task) 🦷
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![GitHub stars](https://img.shields.io/github/stars/USERNAME/REPO.svg)](https://github.com/USERNAME/REPO/stargazers) [![Kaggle Dataset](https://img.shields.io/badge/Kaggle-Dataset-20BEFF?logo=kaggle&logoColor=fff)](https://www.kaggle.com/datasets/mohamedali020/dental-x-raypanoramic-semanticsegmentation-task)
 
+
+
 ![X-ray Example](https://github.com/mohamedali020/Dental-Panoramic-X-Ray-Segmentation-Using-U-Net-with-VGG-16-Backbone/raw/main/1-s2.0-S0010482522010046-ga1.jpg)
+
+
 
 ## 📑 Table of Contents
 - [Abstract](#abstract)  
@@ -117,6 +125,23 @@ desired object from the image background. The **two main types of image segmenta
 ## 📊 Dataset Details
 
 - **Source:** Kaggle ([link](https://www.kaggle.com/datasets/mohamedali020/dental-x-raypanoramic-semanticsegmentation-task)), originally from Roboflow.
+Dental-Xray-Segmentation/
+│
+├── train/
+│ ├── train_images/
+│ └── train_mask/
+│
+├── valid/
+│ ├── valid_images/
+│ └── valid_mask/
+│
+├── test/
+│ ├── test_images/
+│ └── test_mask/
+│
+├── train_annotations.coco.json
+├── valid_annotations.coco.json
+├── test_annotations.coco.json
 - **Counts & Splits:**
   - Train: 4,772 images + masks  
   - Validation: 2,071 images + masks  
@@ -182,6 +207,11 @@ A binary mask highlighting target tooth regions.
 - **Clinical Integration:** Incorporate dentist feedback into model refinement.
 
 ---
+
+##  Conclusion
+
+This project demonstrates the potential of deep learning—specifically U-Net with a VGG16 backbone—in the field of dental image analysis. Automating the segmentation of dental X-rays provides a foundation for developing intelligent tools to support dentists in diagnosis, treatment planning, and patient communication. With further improvements and integration into real-world systems, such models can contribute to faster, more accurate, and more accessible dental care.
+
 
 
 ## 🛠️ Installation & Usage
