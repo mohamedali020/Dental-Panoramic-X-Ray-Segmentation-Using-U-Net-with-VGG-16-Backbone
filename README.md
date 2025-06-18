@@ -71,6 +71,8 @@ The future work that could be developed in the field of image segmentation inclu
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![GitHub stars](https://img.shields.io/github/stars/USERNAME/REPO.svg)](https://github.com/USERNAME/REPO/stargazers) [![Kaggle Dataset](https://img.shields.io/badge/Kaggle-Dataset-20BEFF?logo=kaggle&logoColor=fff)](https://www.kaggle.com/datasets/mohamedali020/dental-x-raypanoramic-semanticsegmentation-task)
 
+![X-ray Example](https://github.com/mohamedali020/Dental-Panoramic-X-Ray-Segmentation-Using-U-Net-with-VGG-16-Backbone/raw/main/1-s2.0-S0010482522010046-ga1.jpg)
+
 ## 📑 Table of Contents
 - [Abstract](#abstract)  
 - [Challenges](#challenges)  
