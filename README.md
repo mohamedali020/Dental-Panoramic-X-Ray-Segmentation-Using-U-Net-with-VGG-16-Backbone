@@ -191,3 +191,140 @@ cd REPO
 # Install dependencies (Python 3.7+)
 pip install -r requirements.txt
 
+
+
+
+
+Dental X-ray Binary Segmentation with U-Net and VGG16 🦷
+
+Table of Contents
+
+Project Overview
+Abstract
+Challenges
+Dataset Details
+Data Augmentation
+Methodology
+Results
+Installation and Usage
+Future Work
+Acknowledgments
+
+Project Overview
+This project develops an AI-powered vision system for binary semantic segmentation of Dental Panoramic X-ray images, enabling dentists to diagnose conditions like caries, impacted teeth, and missing teeth with greater accuracy. Using the U-Net architecture with a pre-trained VGG16 backbone, the system processes 256x256 RGB images to produce binary masks, classifying each pixel as either Target (1, dental structures) or Background (0). This enhances diagnostic precision, reduces errors, and supports tailored treatment plans, marking my first hands-on experience with image segmentation.
+Abstract
+Panoramic X-ray images are vital for diagnosing dental issues such as infections, bone defects, and tumors. However, manual analysis can lead to false positives, with research suggesting ~3% of diagnoses are incorrect, causing patient stress. Image segmentation, a key computer vision technique, divides images into meaningful regions, simplifying analysis by extracting boundaries of dental structures. This project employs binary segmentation to classify pixels as Target or Background, leveraging deep learning to improve diagnostic efficiency and accuracy in dentistry.
+Challenges
+Image segmentation poses several challenges:
+
+Noisy Data: Raw X-ray images often contain noise, requiring preprocessing like denoising.
+Computational Demands: Preprocessing and training demand significant computational resources.
+Object Variability: Dental structures vary in shape, size, and position, complicating model generalization.
+Class Imbalance: Target pixels (~3.79%) are significantly fewer than Background pixels, necessitating augmentation and weighting strategies.
+
+Dataset Details
+
+Source: Kaggle Dataset and Roboflow.
+Description: The dataset supports AI-driven tooth segmentation, offering both binary and multi-class tasks with annotations for training, validation, and testing.
+Composition:
+
+
+Split
+Images
+Mask Labels
+
+
+
+Training
+4772
+4772
+
+
+Validation
+2071
+2071
+
+
+Test
+1345
+1345
+
+
+
+Image Size: Primarily 640x640 pixels, resized to 256x256 for training.
+Classes: Supports multi-class segmentation with categories like Caries, Crown, Filling, Implant, Malaligned, Mandibular Canal, Missing Teeth, Periapical Lesion, Retained Root, Root Canal Treatment, Root Piece, Impacted Tooth, and Maxillary Sinus. Unique classes in annotations: {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14}.
+Challenge: Class imbalance (~3.79% Target pixels) addressed through augmentation.
+
+Sample Visuals
+
+Data Augmentation
+To enhance model robustness and address class imbalance, the following transformations were applied using the Albumentations library:
+
+Horizontal Flip: Flipping images horizontally (70% probability) to simulate lateral perspectives.
+Rotate (limit=5): Rotating images up to 5 degrees (70% probability) for orientation variations.
+RandomBrightnessContrast: Adjusting brightness and contrast (0.1 limit, 30% probability) to handle lighting variations.
+ShiftScaleRotate: Shifting, scaling, and rotating (0.1 limit, 10 degrees, 50% probability) for positional and scaling differences.
+GaussNoise: Adding Gaussian noise (10% probability) to improve robustness to image noise.
+
+Methodology
+The project follows a structured approach:
+
+Data Collection: Sourced from Kaggle and Roboflow.
+Preprocessing: Resizing images to 256x256, normalizing pixel values, and applying augmentation.
+Model Architecture: U-Net with VGG16 backbone for binary segmentation.
+Training: Using TensorFlow/Keras with a batch size of 4, 8 epochs (targeting 50), and callbacks (ModelCheckpoint, EarlyStopping, ReduceLROnPlateau).
+Evaluation: Custom Dice Loss and Dice Coefficient metrics.
+
+Model Architecture
+
+U-Net: A convolutional neural network designed for medical image segmentation, featuring an encoder-decoder structure with skip connections.
+VGG16 Backbone: Pre-trained on ImageNet, providing robust feature extraction.
+Output: Binary masks (256x256x1) with sigmoid activation.
+
+Results
+After 8 epochs, the model achieves:
+
+Training Metrics: Accuracy: 0.9859, Dice Coefficient: 0.71
+Validation Metrics: Accuracy: 0.9878, Dice Coefficient: 0.7123
+Classification Metrics: 99% accuracy, 74% precision, 66% recall, 70% F1-score for Target class (support: 2,082,218 pixels).
+
+Installation and Usage
+Requirements
+
+Python 3.x
+TensorFlow
+Keras
+Albumentations
+Matplotlib
+NumPy
+Pillow
+
+Installation
+pip install tensorflow keras albumentations matplotlib numpy pillow
+
+Usage
+
+Clone the repository:git clone https://github.com/mohamedali020/Dental-Panoramic-X-Ray-Segmentation-Using-U-Net-with-VGG-16-Backbone.git
+
+
+Navigate to the project directory:cd Dental-Panoramic-X-Ray-Segmentation-Using-U-Net-with-VGG-16-Backbone
+
+
+Run the Jupyter Notebook:jupyter notebook dental-x-ray-binary-segmentation-u-net-vgg16.ipynb
+
+
+Download the Kaggle dataset and adjust paths in the notebook.
+
+Future Work
+
+Computational Efficiency: Optimize training for reduced time and resource demands.
+Smart Imaging: Enhance low-quality images via deep learning-based denoising, resolution improvement, and motion correction.
+Multi-class Segmentation: Transition to multi-class segmentation using Mask R-CNN to classify diverse dental structures (e.g., caries, bone loss).
+
+Acknowledgments
+
+Kaggle Community for the dataset and resources.
+Roboflow for the original dataset.
+Open-source contributors for U-Net and VGG16 implementations.
+
+
