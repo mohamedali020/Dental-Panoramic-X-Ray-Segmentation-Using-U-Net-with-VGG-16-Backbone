@@ -125,6 +125,9 @@ desired object from the image background. The **two main types of image segmenta
 ## 📊 Dataset Details
 
 - **Source:** Kaggle ([link](https://www.kaggle.com/datasets/mohamedali020/dental-x-raypanoramic-semanticsegmentation-task)), originally from Roboflow.
+
+---
+
 Dental-Xray-Segmentation/
 │
 ├── train/
@@ -142,6 +145,9 @@ Dental-Xray-Segmentation/
 ├── train_annotations.coco.json
 ├── valid_annotations.coco.json
 ├── test_annotations.coco.json
+
+---
+
 - **Counts & Splits:**
   - Train: 4,772 images + masks  
   - Validation: 2,071 images + masks  
